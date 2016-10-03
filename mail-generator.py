@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #mail generator
-#mathieu chot-plassot
+#blog.mathieu.chot-plassot.com
 
 import sys
 import requests

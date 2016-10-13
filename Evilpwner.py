@@ -26,10 +26,9 @@ ascii_art='''\033[0;36m
 '''
 print ascii_art
 
-usage_help="\033[0;32mExemple with -n:\033[0;36m {} -n 'mathieu' \
-        'chot-plassot' [-s '1337'] [-p 'protonmail.com']\
-            \n\033[0;32mExemple with -u: \033[0;36m {} -u 'gentilkiwi'\
-            [-p 'me.com']\033[0;0m".format(sys.argv[0],sys.argv[0])
+usage_help="\033[0;32mExemple with -n:\033[0;36m {} -n 'mathieu'\
+ 'chot-plassot' [-s '1337'] [-p 'protonmail.com']\n\033[0;32mExemple with -u: \033[0;36m {} -u 'gentilkiwi'\
+ [-p 'me.com']\033[0;0m".format(sys.argv[0],sys.argv[0])
 
 parser = argparse.ArgumentParser(description="A simple mail checker")
 parser.add_argument("-n", "--name", action="store", type=str, required=False,\

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf8
-#Mail generator
+#Evil pwner
 
 import sys
 import requests

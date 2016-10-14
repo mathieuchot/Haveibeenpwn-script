@@ -27,7 +27,7 @@ ascii_art='''\033[0;36m
 print ascii_art
 
 usage_help="\033[0;32mExemple with -n:\033[0;36m {} -n 'mathieu'\
- 'chot-plassot' [-s '1337'] [-p 'protonmail.com']\n\033[0;32mExemple with -u:\033[0;36m {} -u 'gentilkiwi'\
+ 'chot-plassot' [-s '1337'] [-p 'protonmail.com']\n\033[0;32mExemple with -u: \033[0;36m {} -u 'gentilkiwi'\
  [-p 'me.com']\033[0;0m".format(sys.argv[0],sys.argv[0])
 
 parser = argparse.ArgumentParser(description="A simple mail checker")
@@ -49,13 +49,15 @@ providers=['hotmail.fr', 'free.fr', 'orange.fr', 'live.fr',\
         'sfr.fr', 'yahoo.fr','gmail.com', 'outlook.fr',\
         'hotmail.com', 'yahoo.com', 'laposte.net']
 
+if params.name:
+    firstname=params.name[0]
+    lastname=params.name[1]
 if params.provider:
     providers.append(params.provider)
+
 def gen_mail(spec):
     mails=[]
     if params.name:
-        firstname=params.name[0]
-        lastname=params.name[1]
         for i in providers:
             mails.append("{}{}{}@{}".format(lastname,firstname,spec,i))
             mails.append("{}{}{}@{}".format(firstname,lastname,spec,i))
@@ -66,6 +68,7 @@ def gen_mail(spec):
             mails.append("{}_{}{}@{}".format(lastname,firstname,spec,i))
             mails.append("{}-{}{}@{}".format(lastname,firstname,spec,i))
             mails.append("{}.{}{}@{}".format(firstname,lastname,spec,i))
+            mails.append("{}.{}{}@{}".format(firstname[:1],lastname,spec,i))
             mails.append("{}_{}{}@{}".format(firstname,lastname,spec,i))
             mails.append("{}-{}{}@{}".format(firstname,lastname,spec,i))
             mails.append("{}{}{}@{}".format(firstname,lastname[:3],spec,i))

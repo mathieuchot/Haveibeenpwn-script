@@ -6,7 +6,7 @@ Usage:
 ./haveibeenpwn.py mynickname
 
 the script will test the username with a list of providers
-used for this article: http://blog.mathieuchot-plassot.com/personal-vendetta-data-breach-investigation/
+used for this article: https://blog.mathieuchot-plassot.com/personal-vendetta-data-breach-investigation/
 ------------------------------------------------------------------------------------------------------------
 # Advanced generator
 -evilpwner.py: Mail generator/checker with mutiple arguments for haveibeenpwn.com

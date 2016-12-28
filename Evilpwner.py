@@ -105,9 +105,14 @@ else:
 print result
 rep=raw_input("\033[0;33m Do you want to Save the list (y/n)?\033[0;0m")
 if rep=="yes" or rep=="y":
-    with open("{}/{}{}{}.txt".format(sys.path[0], firstname, lastname, params.spec), 'w+') as f:
-        for i in result:
-            f.write(i+"\n")
+    if params.username:
+        with open("{}/{}.txt".format(sys.path[0], params.username), 'w+') as f:
+            for i in result:
+                f.write(i+"\n")
+    if params.name:
+        with open("{}/{}{}{}.txt".format(sys.path[0], firstname, lastname, params.spec), 'w+') as f:
+            for i in result:
+                f.write(i+"\n")
 rep=raw_input("\033[0;33m Would you like to check if those emails have been pwned (y/n)?\033[0;0m")
 if rep=="yes" or rep=="y":
     for j in result:
